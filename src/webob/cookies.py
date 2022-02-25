@@ -94,6 +94,8 @@ class RequestCookies(MutableMapping):
         elif had_header:
             self._environ["HTTP_COOKIE"] = ""
 
+        self._cache  # Refresh cache
+
         return found
 
     def _valid_cookie_name(self, name):
